@@ -14,7 +14,7 @@
 
     What NOT to Do
     Do not write duplicate selectors like this:
-
+*/
     /* .card {
       existing styles (add new style in the exiting selector).
     } */
@@ -22,7 +22,7 @@
     /* .card {
       duplicate selector created again to add new styles.
     } */
-*/
+
 
 /*
   TODO 0: Link the style sheet using the link tag inside the head tag.
@@ -66,6 +66,7 @@
    - For the .product-grid .item class: Make each item flexible with a flex grow of 1px, flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
 */
 
+
 /* TODO 7:
   - .static-box: Add padding (0.5rem 0.75rem), round the corners (10px), apply a light gray background using rgba(0,0,0,0.05), and add bottom margin (0.5rem).
 */
@@ -86,12 +87,103 @@ body {
   --muted: #6b7280;        /* muted text */
   --bg: #f6f7fb;           /* page background */
   --card: #ffffff;         /* card/background surfaces */
+  --brand:#2563eb;
+  --brand-dark: #1d4ed8;   
 }
+*{box-sizing: border-box;}
 
 .site-header,
 .site-footer {
   text-align: center;
   padding: 1.25rem;
+  background:var(--card);
+}
+
+.tagline{
+  color: var(--muted);
+}
+
+.color-demo .color-note{
+  color: var(--brand);
+  font-weight: 700px;
+}
+
+.color-demo .muted{
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.bg-sample{
+  width: 100%;
+  min-height: 80px;
+  padding: 0.75rem;
+  margin-block: 0.75rem;
+  border-radius: 12px;
+  color:white;
+  background: linear-gradient(135deg,var(--brand),#22c55e);
+}
+
+.inline-label{
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.18)
+}
+
+.inline-label.alt{
+  border-style: dashed;
+}
+
+.copy .title{
+  font-size: 1rem;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+
+.copy .intro{
+  font-style: italic;
+  line-height: 1.7;
+  margin-top: 0.25rem;
+}
+
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+}
+.btn{
+  padding: 0.4rem 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: var(--brand-dark);
+}
+
+.product-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.product-grid .items{
+  flex: 1px 1px 140px;
+  min-height: 140px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.static-box {
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
 }
 
 .container {
